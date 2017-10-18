@@ -1,0 +1,80 @@
+<html>
+	<head>
+		<link rel='stylesheet' href='css/main.css'>
+	</head>
+	<body>
+		<div id='body-container'>
+			<div id='query-container'>
+				<div id='select-query'>
+					Choose your query
+				</div>
+				<div id='query-list'>
+					<form>
+						<input type='radio' id='query1' name='query' value='1' checked> <label for='query1'>Query 1</label>
+
+						<input type='radio' id='query2' name='query' value='2'> <label for='query2'>Query 2</label>
+
+						<input type='radio' id='query3' name='query' value='3'> <label for='query3'>Query 3</label>
+
+						<input type='radio' id='query4' name='query' value='4'> <label for='query4'>Query 4</label>
+
+						<input type='radio' id='query5' name='query' value='5'> <label for='query5'>Query 5</label>
+
+						<input type='radio' id='query6' name='query' value='6'> <label for='query6'>Query 6</label>
+						
+						<input type='radio' id='query7' name='query' value='7'> <label for='query7'>Query 7</label>
+						
+						<input type='radio' id='query8' name='query' value='8'> <label for='query8'>Query 8</label>
+					</form>
+				</div>
+			</div>
+			
+			<div id='method-container'>
+				<div id='select-method'>
+					Choose your optimization method
+				</div>
+				<div id='method-list'>
+					<form>
+						<input type='radio' id='method1' name='method' value='1' checked>  <label for='method1'>No Optimization</label>
+						
+						<input type='radio' id='method2' name='method' value='2'> <label for='method2'>Heuristic Optimization</label>
+						
+						<input type='radio' id='method3' name='method' value='3'> <label for='method3'>Indices</label>
+						
+						<input type='radio' id='method4' name='method' value='4'> <label for='method4'>Materialized Views</label>
+						
+						<input type='radio' id='method5' name='method' value='5'> <label for='method5'>Stored Procedures</label>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div id='result-button-container'>
+			<button id='result-button'>View Result</button>
+		</div>
+		<div id='result-container'>
+			insert table here
+		</div>
+	</body>
+	<script src="js/jquery.js"></script>
+	<script>
+		$(document).ready(function() {
+			var $resultButton = $('#result-button');
+
+			$('#result-container').hide();
+
+			$resultButton.click(function() {
+               	$('#result-container').hide();
+               	$('#result-container').slideToggle("slow");
+               	animate();
+            });
+
+            function animate() {
+                $('html, body').animate({
+				    scrollTop: $("#result-container").offset().top
+				}, 1000);
+            }
+		});
+
+
+	</script>
+</html>
